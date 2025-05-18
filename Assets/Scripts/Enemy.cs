@@ -15,21 +15,23 @@ public class Enemy : MonoBehaviour
     public float attackRate = 1f;
     public string enemyName;
     public Sprite enemyImage;
+    public AudioClip collisonSound,deathSound;
 
     private int currentHealth;
     private float currentSpeed;    
     private Rigidbody rb;
-    private Animator anim;
+    protected Animator anim;
     private Transform groundCheck;
     private bool onGround;
-    private bool facingRight = false;
+    protected bool facingRight = false;
     private Transform target;
-    private bool isDead = false;
+    protected bool isDead = false;
     private float zForce;
     private float walkTimer;
     private bool damaged = false;
     private float damageTimer; 
     private float nextAttack;
+    private AudioSource audioS;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +41,7 @@ public class Enemy : MonoBehaviour
         groundCheck = transform.Find("GroundCheck");
         target = FindObjectOfType<Player>().transform;
         currentHealth = maxHealth;
+        audioS = GetComponent<AudioSource>();
 
     }
 
@@ -117,11 +120,13 @@ public class Enemy : MonoBehaviour
             damaged = true;
             currentHealth -= damage;
             anim.SetTrigger("HitDamage");
+            PlaySong(collisonSound);
             FindObjectOfType<UIManager>().UpdateEnemyUI(maxHealth, currentHealth, enemyName,enemyImage);
             if (currentHealth <= 0)
             {
                 isDead = true;
                 rb.AddRelativeForce(new Vector3(3, 5, 0), ForceMode.Impulse);
+                PlaySong(deathSound);
             }
         }
     }
@@ -133,7 +138,13 @@ public class Enemy : MonoBehaviour
     {
         currentSpeed = maxSpeed;
     }
-    
-        
-    
+
+    public void PlaySong(AudioClip clip)
+    {
+        audioS.clip = clip;
+        audioS.Play();
+    }
+
+
+
 }
