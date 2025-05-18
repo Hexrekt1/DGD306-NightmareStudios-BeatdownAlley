@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public int maxHealth = 10;
     public string playerName;
     public Sprite playerImage;
+    public AudioClip collisonSound, jumpSound, healthItem;
 
     private int currentHealth;
     private float currentSpeed;
@@ -21,6 +22,7 @@ public class Player : MonoBehaviour
     private bool isDead = false;
     private bool facingRight = true;
     private bool jump = false;
+    private AudioSource audioS;
 // Start is called before the first frame update
 void Start()
     {
@@ -29,6 +31,7 @@ void Start()
         groundCheck = gameObject.transform.Find("GroundCheck");
         currentSpeed = maxSpeed;
         currentHealth = maxHealth;
+        audioS = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -75,6 +78,7 @@ void Start()
             {
                 jump = false;
                 rb.AddForce(Vector3.up * jumpForce);
+                PlaySong(jumpSound);
             }
             float minWidth = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 10)).x;
             float maxWidth = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0, 10)).x;
@@ -104,6 +108,12 @@ void Start()
             currentHealth -= damage;
             anim.SetTrigger("HitDamage");
             FindObjectOfType<UIManager>().UpdateHealth(currentHealth);
+            PlaySong(collisonSound);
         }
+    }
+    public void PlaySong(AudioClip clip)
+    {
+        audioS.clip = clip;
+        audioS.Play();
     }
 }
