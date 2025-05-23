@@ -52,8 +52,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.17954892, y: 0.25923118, z: 0.08758513}
-  m_Center: {x: 0.1321567, y: 0.04695118, z: 0.0045410693}
+  m_Size: {x: 0.17954892, y: 0.33719575, z: 0.08758513}
+  m_Center: {x: 0.1321567, y: 0.007969048, z: 0.0045410693}
 --- !u!114 &5134753861668223333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,7 +147,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1850123700, guid: b5dc1a26d0f6d2247a282cfd6c3878d2, type: 3}
+  m_Sprite: {fileID: 1366175327, guid: beaa99db2ed20aa41b7d2c652efdd726, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -177,10 +177,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.11188565
-  m_Height: 0.3997404
+  m_Radius: 0.13348375
+  m_Height: 0.44293657
   m_Direction: 1
-  m_Center: {x: -0.012830497, y: 0.012486765, z: 0}
+  m_Center: {x: -0.007846355, y: -0.00246564, z: 0}
 --- !u!54 &8377296715415791750
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -225,8 +225,11 @@ MonoBehaviour:
   minHeight: -8.4
   maxHeight: -1.6
   maxHealth: 10
-  playerName: Red
-  playerImage: {fileID: 21300000, guid: bdbeaff1e6a04f2408b5e19cc06a9b09, type: 3}
+  playerName: Green
+  playerImage: {fileID: 21300000, guid: 9ade9e5dc9078954b85776b4beefbb68, type: 3}
+  collisonSound: {fileID: 8300000, guid: bd57b795d021da74ba15f266af9cf7e9, type: 3}
+  jumpSound: {fileID: 8300000, guid: 0a7353f5b7c81bf4f894c2f3f3d1d639, type: 3}
+  healthItem: {fileID: 8300000, guid: 7992ac3bf8708ee4785bfc73c8f403d2, type: 3}
 --- !u!95 &2631099943246968059
 Animator:
   serializedVersion: 5
@@ -237,7 +240,7 @@ Animator:
   m_GameObject: {fileID: 7853466448804668139}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2c6bc21dd22629547804d904aee93b1b, type: 2}
+  m_Controller: {fileID: 9100000, guid: 337451ab21417d14e9e72900fb1b05f8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

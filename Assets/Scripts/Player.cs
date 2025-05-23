@@ -109,11 +109,49 @@ void Start()
             anim.SetTrigger("HitDamage");
             FindObjectOfType<UIManager>().UpdateHealth(currentHealth);
             PlaySong(collisonSound);
+            if(currentHealth <= 0)
+            {
+                isDead = true;
+                FindObjectOfType<GameManager>().lives--;
+                FindObjectOfType<UIManager>().UpdateLives();
+                if (facingRight)
+                {
+                    rb.AddForce(new Vector3(-3, 5, 0), ForceMode.Impulse);
+                }
+                else
+                {
+                    rb.AddForce(new Vector3(3, 5, 0), ForceMode.Impulse);
+                }
+            }
         }
     }
     public void PlaySong(AudioClip clip)
     {
         audioS.clip = clip;
         audioS.Play();
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.CompareTag("Health Item"))
+        {
+            if (Input.GetButtonDown("Fire2"))
+            {
+                Destroy(other.gameObject);
+                PlaySong(healthItem);
+                currentHealth = maxHealth;
+                FindObjectOfType<UIManager>().UpdateHealth(currentHealth);
+            }
+        }
+    }
+    void PlayerRespawn()
+    {
+        isDead = false;
+        currentHealth = maxHealth;
+        FindObjectOfType<UIManager>().UpdateHealth(currentHealth);
+        anim.Rebind();
+        float minWidth = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 10)).x;
+        transform.position = new Vector3(minWidth, 10, -4);
+
     }
 }
