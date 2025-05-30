@@ -1,8 +1,8 @@
 <!-- UNITY CODE ASSIST INSTRUCTIONS START -->
-- Project name: BeatEmUp New 22 Mayıs Yedek
+- Project name: BeatEmUp New 28 Mayıs - Oldu
 - Unity version: Unity 2022.3.50f1
 - Active game object:
-  - Name: BlueEnemy
+  - Name: Boss
   - Tag: Untagged
-  - Layer: 9
+  - Layer: Enemy
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

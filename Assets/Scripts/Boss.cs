@@ -41,7 +41,8 @@ public class Boss : Enemy
     }
     void LoadScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("MainMenu");
+        Time.timeScale = 1f;
     }
     
 }

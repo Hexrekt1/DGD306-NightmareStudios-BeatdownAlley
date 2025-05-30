@@ -52,8 +52,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.2031471, y: 0.37914926, z: 0.08758513}
-  m_Center: {x: -0.2257572, y: -0.007112742, z: 0.0045410693}
+  m_Size: {x: 0.28241205, y: 0.37914932, z: 0.08758513}
+  m_Center: {x: -0.22322762, y: -0.007112742, z: 0.0045410693}
 --- !u!114 &3288489622928378487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,10 +225,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.20881312
-  m_Height: 0.43036136
+  m_Radius: 0.09142579
+  m_Height: 0.3336414
   m_Direction: 1
-  m_Center: {x: -0.0016868456, y: -0.017548699, z: 0}
+  m_Center: {x: -0.0035812857, y: -0.006801912, z: 0}
 --- !u!114 &5781468117536733942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,7 +245,7 @@ MonoBehaviour:
   damageTime: 0.5
   minHeight: -8.4
   maxHeight: -1.6
-  maxHealth: 4
+  maxHealth: 6
   attackRate: 1.5
   enemyName: 
   enemyImage: {fileID: 21300000, guid: 51ba09a211f542a4a9aa427e4dfaf2a7, type: 3}
@@ -271,7 +271,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0.64194775
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -372,7 +372,7 @@ Transform:
   m_GameObject: {fileID: 4488799019755913412}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.388, z: 0}
+  m_LocalPosition: {x: 0, y: -0.338, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

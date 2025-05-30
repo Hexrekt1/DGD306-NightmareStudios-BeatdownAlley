@@ -26,12 +26,7 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = FindObjectOfType<Player>();
-        healthUI.maxValue = player.maxHealth;
-        healthUI.value = healthUI.maxValue;
-        playerName.text = player.playerName;
-        playerImage.sprite = player.playerImage;
-        UpdateLives();
+        
     }
 
     // Update is called once per frame
@@ -46,6 +41,7 @@ public class UIManager : MonoBehaviour
      }
     public void UpdateHealth(int amount)
     {
+        healthUI.maxValue = player.maxHealth; 
         healthUI.value = amount;
     }
     public void UpdateEnemyUI(int maxHealth, int currentHealth,string name,Sprite image)
@@ -59,7 +55,24 @@ public class UIManager : MonoBehaviour
         enemyUI.SetActive(true);
     }
     public void UpdateLives()
+{
+    if (GameManager.Instance != null)
     {
-        livesText.text = "x " + FindObjectOfType<GameManager>().lives.ToString();
+        livesText.text = "x " + GameManager.Instance.sharedLives.ToString();
     }
+}
+
+
+    public void Initialize(Player p)
+    {
+        player = p;
+
+        healthUI.maxValue = player.maxHealth;
+        healthUI.value = player.maxHealth;
+        playerName.text = player.playerName;
+        playerImage.sprite = player.playerImage;
+        UpdateLives();  
+    }
+
+
 }
