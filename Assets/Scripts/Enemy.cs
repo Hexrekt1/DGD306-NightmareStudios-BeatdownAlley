@@ -44,7 +44,7 @@ public class Enemy : MonoBehaviour
     {
         if (GameManager.Instance.players.Count == 0)
         {
-            // No players in scene yet
+            
             return;
         }
 

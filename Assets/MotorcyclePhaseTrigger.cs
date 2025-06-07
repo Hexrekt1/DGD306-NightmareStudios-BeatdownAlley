@@ -7,7 +7,7 @@ public class MotorcyclePhaseTrigger : MonoBehaviour
     public GameObject[] phase2Enemies;
     public GameObject[] phase3Enemies;
 
-    public CameraFollow cameraFollow; // Reference to your camera follow script
+    public CameraFollow cameraFollow; 
 
     private bool triggered = false;
 
@@ -33,7 +33,7 @@ public class MotorcyclePhaseTrigger : MonoBehaviour
         yield return new WaitForSeconds(4f);
         ActivateEnemies(phase3Enemies);
 
-        // Start monitoring for enemy deaths
+        
         StartCoroutine(CheckForEnemiesRemaining());
     }
 

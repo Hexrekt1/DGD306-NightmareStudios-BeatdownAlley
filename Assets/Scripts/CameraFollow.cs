@@ -10,7 +10,7 @@ public class CameraFollow : MonoBehaviour
 
     [HideInInspector] public Transform m_Player;
 
-    private bool isLocked = false; // ← New lock flag
+    private bool isLocked = false; 
 
     private bool CheckXMargin()
     {
@@ -42,7 +42,7 @@ public class CameraFollow : MonoBehaviour
         m_Player = newPlayer;
     }
 
-    // 🔒 Public methods to control lock state
+    
     public void LockCamera()
     {
         isLocked = true;

@@ -14,14 +14,14 @@ public class MotorcycleEnemy : MonoBehaviour
     public int damage = 1;
 
     [Header("Lifetime")]
-    public float lifetime = 4f; // Despawn after 4 seconds
+    public float lifetime = 4f; 
 
     private void OnEnable()
     {
-        // Set direction based on goRight toggle
+        
         direction = goRight ? Vector3.right : Vector3.left;
 
-        // Start self-destruction countdown
+        
         Invoke(nameof(SelfDestruct), lifetime);
     }
 
@@ -37,7 +37,7 @@ public class MotorcycleEnemy : MonoBehaviour
             Player player = other.GetComponent<Player>();
             if (player != null && !player.isDead)
             {
-                Debug.Log("💥 Motorcycle hit the player!");
+                Debug.Log(" Motorcycle hit the player!");
                 player.TookDamage(damage);
             }
         }

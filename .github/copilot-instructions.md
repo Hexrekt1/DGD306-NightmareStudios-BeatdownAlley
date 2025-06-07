@@ -2,7 +2,7 @@
 - Project name: BeatEmUp New 28 Mayıs - Oldu
 - Unity version: Unity 2022.3.50f1
 - Active game object:
-  - Name: Boss
+  - Name: GameManager
   - Tag: Untagged
-  - Layer: Enemy
+  - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

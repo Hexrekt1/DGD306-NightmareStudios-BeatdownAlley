@@ -14,31 +14,21 @@ public class ManualPlayerJoiner : MonoBehaviour
 
     void Update()
     {
-        // Gamepad kontrolü
+        // Check gamepads
         foreach (var gamepad in Gamepad.all)
         {
-            if (gamepad.startButton.wasPressedThisFrame)
+            if (!IsDevicePaired(gamepad) && playerCount < 2 && AnyButtonPressed(gamepad))
             {
-                if (!IsDevicePaired(gamepad) && playerCount < 2)
-                {
-                    SpawnPlayer(gamepad);
-                }
+                SpawnPlayer(gamepad);
             }
         }
 
-        // Joystick kontrolü (örnek: button1 "start" olarak varsayýlmýþtýr)
+        // Check joysticks (arcade sticks, etc.)
         foreach (var joystick in Joystick.all)
         {
-            if (!IsDevicePaired(joystick) && playerCount < 2)
+            if (!IsDevicePaired(joystick) && playerCount < 2 && AnyButtonPressed(joystick))
             {
-                // Düðmenin var olup olmadýðýný kontrol et
-                if (joystick.TryGetChildControl<ButtonControl>("button7") is ButtonControl startButton)
-                {
-                    if (startButton.wasPressedThisFrame)
-                    {
-                        SpawnPlayer(joystick);
-                    }
-                }
+                SpawnPlayer(joystick);
             }
         }
     }
@@ -51,7 +41,7 @@ public class ManualPlayerJoiner : MonoBehaviour
         var playerInput = PlayerInput.Instantiate(
             prefabToSpawn,
             playerIndex: playerCount,
-            controlScheme: "Gamepad", // Joystick için de bu çalýþabilir, ancak gerekirse ayýrabilirim
+            controlScheme: null,
             pairWithDevice: device);
 
         playerInput.transform.position = spawnPoint.position;
@@ -70,6 +60,18 @@ public class ManualPlayerJoiner : MonoBehaviour
             {
                 if (pairedDevice.deviceId == device.deviceId)
                     return true;
+            }
+        }
+        return false;
+    }
+
+    private bool AnyButtonPressed(InputDevice device)
+    {
+        foreach (var control in device.allControls)
+        {
+            if (control is ButtonControl button && button.wasPressedThisFrame)
+            {
+                return true;
             }
         }
         return false;

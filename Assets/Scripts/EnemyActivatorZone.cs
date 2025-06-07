@@ -18,7 +18,7 @@ public class EnemyActivatorZone : MonoBehaviour
         activated = true;
         GetComponent<Collider>().enabled = false;
 
-        // Lock the camera position
+        
         CameraFollow cam = FindObjectOfType<CameraFollow>();
         if (cam != null)
             cam.maxXAndY.x = cameraLockX;
@@ -28,7 +28,7 @@ public class EnemyActivatorZone : MonoBehaviour
 
     private IEnumerator ActivateEnemiesInPhases()
     {
-        // Phase 1
+        
         foreach (var enemy in phase1Enemies)
         {
             if (enemy != null)
@@ -56,7 +56,7 @@ public class EnemyActivatorZone : MonoBehaviour
         }
         yield return new WaitForSeconds(4f);
 
-        // Phase 3
+        
         foreach (var enemy in phase3Enemies)
         {
             if (enemy != null)
@@ -69,7 +69,7 @@ public class EnemyActivatorZone : MonoBehaviour
             }
         }
 
-        // Check enemies cleared
+        
         StartCoroutine(CheckEnemiesCleared());
     }
 
@@ -79,7 +79,7 @@ public class EnemyActivatorZone : MonoBehaviour
 
         while (true)
         {
-            // Check if any enemies still exist and are active
+            
             bool anyAlive = false;
 
             foreach (var enemy in phase1Enemies)
@@ -100,9 +100,9 @@ public class EnemyActivatorZone : MonoBehaviour
             yield return new WaitForSeconds(1f);
         }
 
-        // Unlock the camera
+        
         CameraFollow cam = FindObjectOfType<CameraFollow>();
         if (cam != null)
-            cam.maxXAndY.x = 200f; // your default max scroll
+            cam.maxXAndY.x = 200f; 
     }
 }

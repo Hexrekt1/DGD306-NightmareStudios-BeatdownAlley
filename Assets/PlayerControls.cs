@@ -189,6 +189,61 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""8271651b-60a9-4005-af66-7871ae03e722"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""e94d4513-5f6f-4c94-bdd0-6b4c4941962f"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""03a0cb2d-9391-42c1-9f86-867f4a9b3c1b"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""d69ac429-74b9-4976-9efd-e80ca6725688"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""444feccb-2e97-42b1-8569-be73efef45c1"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": """",
                     ""id"": ""76c43df0-d620-44a9-b6f7-fc56383dc94a"",
                     ""path"": ""<HID::Microntek              USB Joystick          >/button3"",
@@ -330,7 +385,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""R1/R2/L1/L3"",
+                    ""name"": ""DpadJoystick"",
                     ""id"": ""5062c656-3e3d-4dce-90ac-1fea7b6a222f"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
@@ -343,7 +398,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""up"",
                     ""id"": ""41144372-e190-4375-9da2-ce263966c80f"",
-                    ""path"": ""<HID::Microntek              USB Joystick          >/button6"",
+                    ""path"": ""<HID::Microntek              USB Joystick          >/hat/up"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -354,7 +409,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""down"",
                     ""id"": ""2c81a34f-9b2f-4309-8133-020ddc319a49"",
-                    ""path"": ""<HID::Microntek              USB Joystick          >/button8"",
+                    ""path"": ""<HID::Microntek              USB Joystick          >/hat/down"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -365,7 +420,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""left"",
                     ""id"": ""dd4abd30-90cd-4255-afa6-bdb62a7c324c"",
-                    ""path"": ""<HID::Microntek              USB Joystick          >/button5"",
+                    ""path"": ""<HID::Microntek              USB Joystick          >/hat/left"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -376,7 +431,62 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""right"",
                     ""id"": ""f7f38418-8542-45aa-9417-feacb8884b47"",
-                    ""path"": ""<HID::Microntek              USB Joystick          >/button7"",
+                    ""path"": ""<HID::Microntek              USB Joystick          >/hat/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""DPad"",
+                    ""id"": ""fd50d4f4-bd49-4470-8da1-881b1bd0ef00"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""ab68c335-1050-4d5a-ac09-908d389b30cf"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""c8d7f43c-2819-4c42-8dfa-46377e549327"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""a5dc0c34-f7d1-45a4-9584-38e3b8fa1b98"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""a10d7039-0123-478d-b29f-351bd521853a"",
+                    ""path"": ""<Gamepad>/dpad/right"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -409,7 +519,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""1c0e23d0-235a-45ae-94a2-f3ffea04ea99"",
-                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -431,7 +541,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""a80731b2-e450-49c9-a677-1802c22c6ab1"",
-                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -465,6 +575,28 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""a43555fd-fb7f-4fd5-8424-7fe0841841a0"",
                     ""path"": ""<HID::Microntek              USB Joystick          >/button7"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""StartGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a0f5fc1b-abb3-44b9-9eae-ef6cbb2dd551"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""StartGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""03695833-b021-4bef-90b0-b28715bc5d36"",
+                    ""path"": ""<HID::Microntek              USB Joystick          >/button10"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

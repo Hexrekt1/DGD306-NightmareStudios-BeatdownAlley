@@ -3,28 +3,29 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public ContinueUIManager continueUIManager;
-
     public static GameManager Instance;
 
+    [Tooltip("Total shared lives for all players")]
     public int sharedLives = 3;
+
+    
+    public ContinueUIManager continueUIManager;
 
     public List<Player> players = new List<Player>();
 
-    void Awake()
+    private void Awake() 
     {
         if (Instance == null)
-        {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
         else
         {
             Destroy(gameObject);
+            return;
         }
+
+        DontDestroyOnLoad(gameObject);
     }
 
-    // 🔹 Add this to register new players when they spawn
     public void RegisterPlayer(Player player)
     {
         if (!players.Contains(player))
@@ -33,7 +34,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // 🔹 And this for cleanup if a player dies/disconnects
     public void UnregisterPlayer(Player player)
     {
         if (players.Contains(player))
@@ -42,38 +42,60 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    
     public void NotifyAllUIManagersLivesChanged()
     {
         foreach (var player in players)
         {
             if (player != null && player.uiManager != null)
             {
-                player.uiManager.UpdateLives();
+                player.uiManager.UpdateLives(); 
             }
         }
 
-        // Check if shared lives is 0 and all players are dead
-        if (sharedLives <= 0 && AllPlayersDead())
-        {
-            if (continueUIManager != null)
-                continueUIManager.ShowContinuePanel();
-        }
+        CheckGameOver();
     }
 
-    private bool AllPlayersDead()
+    private void CheckGameOver()
     {
+        // Check if all players are dead (isDead == true)
+        bool allDead = true;
+
         foreach (var player in players)
         {
             if (!player.isDead)
-                return false;
+            {
+                allDead = false;
+                break;
+            }
         }
-        return true;
+
+        if (allDead)
+        {
+            // No lives left, show continue UI panel
+            if (sharedLives <= 0)
+            {
+                if (continueUIManager != null)
+                {
+                    continueUIManager.ShowContinuePanel();
+                }
+            }
+            else
+            {
+                // If still have lives, respawn players
+                RespawnAllPlayers();
+            }
+        }
     }
 
-    public void EndGame()
+    public void RespawnAllPlayers()
     {
-        Debug.Log("Game Over. You can load a scene or show game over screen here.");
-        // Example: SceneManager.LoadScene("MainMenu");
+        foreach (var player in players)
+        {
+            if (player.isDead)
+            {
+                player.PlayerRespawn();
+            }
+        }
     }
-
 }

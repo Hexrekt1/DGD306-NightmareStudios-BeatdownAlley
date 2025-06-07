@@ -1,19 +1,23 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class UIStart : MonoBehaviour
 {
     public Animator animator;
-    // Start is called before the first frame update
+
+    private bool stopped = false;
+
     void Start()
     {
         animator.Play("Press Start");
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (PlayerInput.all.Count >= 2)
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

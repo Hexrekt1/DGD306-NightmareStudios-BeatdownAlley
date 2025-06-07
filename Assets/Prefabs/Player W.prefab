@@ -87,9 +87,9 @@ GameObject:
   - component: {fileID: 490389332561156454}
   - component: {fileID: 1574971921849313477}
   - component: {fileID: 4215460329705936138}
-  - component: {fileID: 1346204185652634563}
   - component: {fileID: 3483198907306043958}
   - component: {fileID: 8621173436381351068}
+  - component: {fileID: 1346204185652634563}
   - component: {fileID: 7343883724235540593}
   m_Layer: 7
   m_Name: Player W
@@ -218,30 +218,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &1346204185652634563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 872626576580222325}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5abddf6c51e8cf0419afe99cc2e32059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uiManager: {fileID: 373096687893808961}
-  maxSpeed: 3
-  jumpForce: 600
-  minHeight: -8.4
-  maxHeight: -1.6
-  maxHealth: 10
-  playerName: 
-  playerImage: {fileID: 21300000, guid: bdbeaff1e6a04f2408b5e19cc06a9b09, type: 3}
-  collisionSound: {fileID: 8300000, guid: bd57b795d021da74ba15f266af9cf7e9, type: 3}
-  jumpSound: {fileID: 0}
-  healthItem: {fileID: 8300000, guid: 7992ac3bf8708ee4785bfc73c8f403d2, type: 3}
-  isDead: 0
 --- !u!95 &3483198907306043958
 Animator:
   serializedVersion: 5
@@ -359,6 +335,31 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1346204185652634563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872626576580222325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5abddf6c51e8cf0419afe99cc2e32059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiManager: {fileID: 373096687893808961}
+  continueUIManager: {fileID: 0}
+  maxSpeed: 3
+  jumpForce: 600
+  minHeight: -8.4
+  maxHeight: -1.6
+  maxHealth: 10
+  playerName: 
+  playerImage: {fileID: 21300000, guid: bdbeaff1e6a04f2408b5e19cc06a9b09, type: 3}
+  collisionSound: {fileID: 8300000, guid: bd57b795d021da74ba15f266af9cf7e9, type: 3}
+  jumpSound: {fileID: 0}
+  healthItem: {fileID: 8300000, guid: 7992ac3bf8708ee4785bfc73c8f403d2, type: 3}
+  isDead: 0
 --- !u!114 &7343883724235540593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -433,15 +434,51 @@ MonoBehaviour:
     m_ActionId: 4af9944c-1ff4-4182-be84-2ab56901815f
     m_ActionName: Player/Attack[/Mouse/leftButton]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1346204185652634563}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 01eac7e5-144b-48b4-9216-992224531875
     m_ActionName: Gamepads/Move
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1346204185652634563}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: OnJump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: e38c69c0-b253-428b-a02f-57704f3abc83
     m_ActionName: Gamepads/Jump
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1346204185652634563}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: OnAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 156286e5-2e2b-40b8-9aab-30a51b0916bb
     m_ActionName: Gamepads/Attack
   - m_PersistentCalls:
