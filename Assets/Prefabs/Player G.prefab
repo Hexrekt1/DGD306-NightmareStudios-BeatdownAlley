@@ -52,8 +52,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.17954892, y: 0.33719575, z: 0.08758513}
-  m_Center: {x: 0.1321567, y: 0.007969048, z: 0.0045410693}
+  m_Size: {x: 0.24593008, y: 0.33719575, z: 0.08758513}
+  m_Center: {x: 0.16534728, y: 0.007969056, z: 0.0045410693}
 --- !u!114 &5134753861668223333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1485,7 +1485,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiManager: {fileID: 8671911053648414646}
-  continueUIManager: {fileID: 0}
   maxSpeed: 3
   jumpForce: 600
   minHeight: -8.4
