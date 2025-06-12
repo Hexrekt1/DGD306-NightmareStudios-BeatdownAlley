@@ -11,7 +11,7 @@ public class MainMenuInputHandler : MonoBehaviour
     {
         if (gameStarted) return;
 
-        // Check all Gamepads
+        
         foreach (var gamepad in Gamepad.all)
         {
             if (AnyButtonPressed(gamepad))
@@ -21,7 +21,7 @@ public class MainMenuInputHandler : MonoBehaviour
             }
         }
 
-        // Check all Joysticks
+        
         foreach (var joystick in Joystick.all)
         {
             if (AnyButtonPressed(joystick))

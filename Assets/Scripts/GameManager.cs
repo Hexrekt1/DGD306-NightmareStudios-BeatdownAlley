@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
 
     private void CheckGameOver()
     {
-        // Check if all players are dead (isDead == true)
+        
         bool allDead = true;
 
         foreach (var player in players)
@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
 
         if (allDead)
         {
-            // No lives left, show continue UI panel
+            
             if (sharedLives <= 0)
             {
                 if (continueUIManager != null)
@@ -82,7 +82,7 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                // If still have lives, respawn players
+                
                 RespawnAllPlayers();
             }
         }

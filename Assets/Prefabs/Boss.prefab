@@ -130,7 +130,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -4}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7512464914464155146}
@@ -178,7 +178,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300004, guid: cf91f6f53b2330b4696cdb3734d685d3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 341560385556d9741a1d3e46acb473b3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -252,7 +252,7 @@ MonoBehaviour:
   maxHealth: 30
   attackRate: 2
   enemyName: Bhump
-  enemyImage: {fileID: 21300000, guid: 1342ea7a4e1aee844af958324a3c8f83, type: 3}
+  enemyImage: {fileID: 21300000, guid: 1746b4750eec12144ad7ca53ce9fcc12, type: 3}
   collisonSound: {fileID: 8300000, guid: bd57b795d021da74ba15f266af9cf7e9, type: 3}
   deathSound: {fileID: 8300000, guid: 702a602812d6ad648aec217ce7eb7443, type: 3}
   Fist: {fileID: 6529606454224723837, guid: 3c892107a56fbd34f823f8cf868ec8f0, type: 3}

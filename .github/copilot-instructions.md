@@ -1,8 +1,8 @@
 <!-- UNITY CODE ASSIST INSTRUCTIONS START -->
-- Project name: BeatEmUp New 28 Mayıs - Oldu
+- Project name: BeatEmUp New 7 Haziran - Oldu
 - Unity version: Unity 2022.3.50f1
 - Active game object:
-  - Name: GameManager
+  - Name: Canvas
   - Tag: Untagged
-  - Layer: Default
+  - Layer: UI
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

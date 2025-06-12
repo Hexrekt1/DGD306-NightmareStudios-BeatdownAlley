@@ -14,7 +14,7 @@ public class ManualPlayerJoiner : MonoBehaviour
 
     void Update()
     {
-        // Check gamepads
+        
         foreach (var gamepad in Gamepad.all)
         {
             if (!IsDevicePaired(gamepad) && playerCount < 2 && AnyButtonPressed(gamepad))
@@ -23,7 +23,7 @@ public class ManualPlayerJoiner : MonoBehaviour
             }
         }
 
-        // Check joysticks (arcade sticks, etc.)
+        
         foreach (var joystick in Joystick.all)
         {
             if (!IsDevicePaired(joystick) && playerCount < 2 && AnyButtonPressed(joystick))
