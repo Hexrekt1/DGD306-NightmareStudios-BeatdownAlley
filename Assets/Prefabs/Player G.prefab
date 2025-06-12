@@ -1226,8 +1226,8 @@ GameObject:
   - component: {fileID: 8377296715415791750}
   - component: {fileID: 2631099943246968059}
   - component: {fileID: 3037839806249798453}
-  - component: {fileID: 7857026521715909707}
   - component: {fileID: 7276176863365682120}
+  - component: {fileID: 7857026521715909707}
   m_Layer: 7
   m_Name: Player G
   m_TagString: Player
@@ -1472,30 +1472,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &7857026521715909707
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7853466448804668139}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5abddf6c51e8cf0419afe99cc2e32059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uiManager: {fileID: 8671911053648414646}
-  maxSpeed: 3
-  jumpForce: 600
-  minHeight: -8.4
-  maxHeight: -1.6
-  maxHealth: 10
-  playerName: 
-  playerImage: {fileID: 21300000, guid: 9ade9e5dc9078954b85776b4beefbb68, type: 3}
-  collisionSound: {fileID: 8300000, guid: bd57b795d021da74ba15f266af9cf7e9, type: 3}
-  jumpSound: {fileID: 0}
-  healthItem: {fileID: 8300000, guid: 7992ac3bf8708ee4785bfc73c8f403d2, type: 3}
-  isDead: 0
 --- !u!114 &7276176863365682120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1625,11 +1601,52 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 95be6a70-21bd-400f-8005-444bf3d29913
     m_ActionName: GamepadsJoystick/StartGame
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7857026521715909707}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: OnExit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 16fb019a-5509-41b1-a98a-232a507e1492
+    m_ActionName: GamepadsJoystick/Exit[/Microntek              USB Joystick         
+      /button2]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: GamepadsJoystick
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &7857026521715909707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7853466448804668139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5abddf6c51e8cf0419afe99cc2e32059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiManager: {fileID: 8671911053648414646}
+  maxSpeed: 3
+  jumpForce: 600
+  minHeight: -8.4
+  maxHeight: -1.6
+  maxHealth: 10
+  playerName: 
+  playerImage: {fileID: 21300000, guid: 9ade9e5dc9078954b85776b4beefbb68, type: 3}
+  collisionSound: {fileID: 8300000, guid: bd57b795d021da74ba15f266af9cf7e9, type: 3}
+  jumpSound: {fileID: 0}
+  healthItem: {fileID: 8300000, guid: 7992ac3bf8708ee4785bfc73c8f403d2, type: 3}
+  isDead: 0
 --- !u!1 &7997294043827927143
 GameObject:
   m_ObjectHideFlags: 0

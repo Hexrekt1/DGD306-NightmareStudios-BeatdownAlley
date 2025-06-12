@@ -359,6 +359,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Exit"",
+                    ""type"": ""Button"",
+                    ""id"": ""16fb019a-5509-41b1-a98a-232a507e1492"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -603,6 +612,28 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""StartGame"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4e89070d-1c97-4c06-8e3a-d6062b3aa7a8"",
+                    ""path"": ""<HID::Microntek              USB Joystick          >/button2"",
+                    ""interactions"": ""Hold"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Exit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d47af9ee-3d9c-4124-a478-16cc60cc3ca0"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": ""Hold"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Exit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -621,6 +652,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_GamepadsJoystick_Attack = m_GamepadsJoystick.FindAction("Attack", throwIfNotFound: true);
         m_GamepadsJoystick_Use = m_GamepadsJoystick.FindAction("Use", throwIfNotFound: true);
         m_GamepadsJoystick_StartGame = m_GamepadsJoystick.FindAction("StartGame", throwIfNotFound: true);
+        m_GamepadsJoystick_Exit = m_GamepadsJoystick.FindAction("Exit", throwIfNotFound: true);
     }
 
     ~@PlayerControls()
@@ -755,6 +787,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_GamepadsJoystick_Attack;
     private readonly InputAction m_GamepadsJoystick_Use;
     private readonly InputAction m_GamepadsJoystick_StartGame;
+    private readonly InputAction m_GamepadsJoystick_Exit;
     public struct GamepadsJoystickActions
     {
         private @PlayerControls m_Wrapper;
@@ -764,6 +797,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @Attack => m_Wrapper.m_GamepadsJoystick_Attack;
         public InputAction @Use => m_Wrapper.m_GamepadsJoystick_Use;
         public InputAction @StartGame => m_Wrapper.m_GamepadsJoystick_StartGame;
+        public InputAction @Exit => m_Wrapper.m_GamepadsJoystick_Exit;
         public InputActionMap Get() { return m_Wrapper.m_GamepadsJoystick; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -788,6 +822,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @StartGame.started += instance.OnStartGame;
             @StartGame.performed += instance.OnStartGame;
             @StartGame.canceled += instance.OnStartGame;
+            @Exit.started += instance.OnExit;
+            @Exit.performed += instance.OnExit;
+            @Exit.canceled += instance.OnExit;
         }
 
         private void UnregisterCallbacks(IGamepadsJoystickActions instance)
@@ -807,6 +844,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @StartGame.started -= instance.OnStartGame;
             @StartGame.performed -= instance.OnStartGame;
             @StartGame.canceled -= instance.OnStartGame;
+            @Exit.started -= instance.OnExit;
+            @Exit.performed -= instance.OnExit;
+            @Exit.canceled -= instance.OnExit;
         }
 
         public void RemoveCallbacks(IGamepadsJoystickActions instance)
@@ -837,5 +877,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnAttack(InputAction.CallbackContext context);
         void OnUse(InputAction.CallbackContext context);
         void OnStartGame(InputAction.CallbackContext context);
+        void OnExit(InputAction.CallbackContext context);
     }
 }

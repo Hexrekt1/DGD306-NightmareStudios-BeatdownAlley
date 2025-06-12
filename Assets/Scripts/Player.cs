@@ -205,6 +205,14 @@ public class Player : MonoBehaviour
         if (context.performed)
             healthPressed = true;
     }
+    public void OnExit(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Debug.Log("Quitting game...");
+            Application.Quit();
+        }
+    }
     public void ResetSpeed()
     {
         currentSpeed = maxSpeed;
@@ -231,7 +239,7 @@ public class Player : MonoBehaviour
         Camera cam = Camera.main;
         if (cam == null)
         {
-            Debug.LogWarning("No main camera found!");
+            
             return;
         }
 

@@ -48,4 +48,5 @@ public class MainMenuInputHandler : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene("GameLevel");
     }
+
 }

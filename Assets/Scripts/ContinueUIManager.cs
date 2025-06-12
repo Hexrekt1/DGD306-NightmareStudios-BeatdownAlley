@@ -44,6 +44,7 @@ public class ContinueUIManager : MonoBehaviour
             insertCoinImage.enabled = false;
 
         SceneManager.LoadScene("MainMenu");
+        Time.timeScale = 1f;
     }
 
     public void HideContinuePanel()
